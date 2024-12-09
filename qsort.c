@@ -161,7 +161,7 @@ int main(int argc, char* argv[]) {
 		array[sz++] = (strdup(buf));
 	}
     uint64_t sortTime = micros();
-	myqsort(array, 0, sz - 1);
+	quickSort((void **)array, 0, sz - 1, compareLinesFromAToZ);
     printf("%zu %lu\n", sz, micros() - sortTime);
     /*for (int i = 0; i < sz - 1; i++) {
         if (strcmp(array[i], array[i+1]) > 0) printf("ALERTTTTTTTTTTT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
